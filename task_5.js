@@ -1,15 +1,20 @@
 function primeFactors(n){
-    let result = "";
-    let count = 0;
+let result = "";
 
     for (let i = 2; i <= n; i++) {
-        count = 0;
+        let count = 0;
+        
         while (n % i === 0) {
             count++;
-            n /= i;
+            n = n / i;
         }
+        
         if (count > 0) {
-            result += `(${i}${count > 1 ? '**' + count : ''})`;
+            if (count > 1) {
+                result += "(" + i + "**" + count + ")";
+            } else {
+                result += "(" + i + ")";
+            }
         }
     }
 
