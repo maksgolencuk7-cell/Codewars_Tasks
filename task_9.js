@@ -1,15 +1,12 @@
 function solution(str){
-   let result = [];
-    
-    for (let i = 0; i < str.length; i += 2) {
-        let pair = str.slice(i, i + 2);
-        
-        if (pair.length === 1) {
-            pair += '_';
-        }
-        
-        result.push(pair);
+   if (str.length % 2 !== 0) {
+        str += "_";
     }
     
-    return result;
-}
+    let result = [];
+    
+    for (let i = 0; i < str.length; i += 2) {
+        result.push(str.slice(i, i + 2));
+    }
+    
+    return result;}
