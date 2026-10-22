@@ -1,15 +1,16 @@
 function whatCentury(year)
 {
-  let centuryNum = Math.ceil(Number(year) / 100);
-    let lastTwoDigits = centuryNum % 100;
-    let lastDigit = centuryNum % 10;
-    let suffix = 'th';
+let century = Math.ceil(year / 100);
+  let lastTwo = century % 100;
+  let lastOne = century % 10;
 
-    if (lastTwoDigits < 11 || lastTwoDigits > 13) {
-        if (lastDigit === 1) suffix = 'st';
-        else if (lastDigit === 2) suffix = 'nd';
-        else if (lastDigit === 3) suffix = 'rd';
-    }
+  let suffix = "th";
+  
+  if (lastTwo < 11 || lastTwo > 13) {
+    if (lastOne === 1) suffix = "st";
+    if (lastOne === 2) suffix = "nd";
+    if (lastOne === 3) suffix = "rd";
+  }
 
-    return centuryNum + suffix;
+  return century + suffix;
 }
