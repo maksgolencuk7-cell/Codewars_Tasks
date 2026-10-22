@@ -1,11 +1,11 @@
 function wave(str){
-  let result = [];
+let result = [];
     
     for (let i = 0; i < str.length; i++) {
-        if (str[i] === ' ') continue;
-        
-        let wavedWord = str.slice(0, i) + str[i].toUpperCase() + str.slice(i + 1);
-        result.push(wavedWord);
+        if (str[i] !== ' ') {
+            let wavedWord = str.slice(0, i) + str[i].toUpperCase() + str.slice(i + 1);
+            result.push(wavedWord);
+        }
     }
     
     return result;
