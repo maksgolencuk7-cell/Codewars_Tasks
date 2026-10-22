@@ -1,16 +1,16 @@
 function expandedForm(num) {
- let strNum = num.toString();
+ let str = num.toString();
     let result = [];
-    let len = strNum.length;
 
-    for (let i = 0; i < len; i++) {
-        let digit = strNum[i];
+    for (let i = 0; i < str.length; i++) {
+        let digit = str[i];
         
         if (digit !== '0') {
-            let value = digit * Math.pow(10, len - i - 1);
+            let zeros = str.length - i - 1;
+            let value = digit + "0".repeat(zeros);
             result.push(value);
         }
     }
 
-    return result.join(' + ');
+    return result.join(" + ");
 }
