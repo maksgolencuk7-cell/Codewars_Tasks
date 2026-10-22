@@ -1,12 +1,21 @@
 function longest(arr, n) {
-let indexedArr = arr.map((str, index) => ({ str, index }));
-    
-    indexedArr.sort((a, b) => {
-        if (b.str.length === a.str.length) {
-            return a.index - b.index;
+  let copy = arr.slice(); 
+    let result = "";
+
+    for (let i = 0; i < n; i++) {
+        let maxIndex = 0;
+        
+       
+        for (let j = 1; j < copy.length; j++) {
+            if (copy[j].length > copy[maxIndex].length) {
+                maxIndex = j;
+            }
         }
-        return b.str.length - a.str.length;
-    });
-    
-    return indexedArr[n - 1].str;
+   
+        result = copy[maxIndex];
+      
+        copy.splice(maxIndex, 1);
+    }
+
+    return result;
 }
