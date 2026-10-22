@@ -1,13 +1,21 @@
 function toWeirdCase(string){
-return string.split(' ').map(word => {
-        let weirdWord = '';
-        for (let i = 0; i < word.length; i++) {
-            if (i % 2 === 0) {
-                weirdWord += word[i].toUpperCase();
+let words = string.split(' ');
+    let result = [];
+
+    for (let i = 0; i < words.length; i++) {
+        let word = words[i];
+        let weirdWord = "";
+
+        for (let j = 0; j < word.length; j++) {
+            if (j % 2 === 0) {
+                weirdWord += word[j].toUpperCase();
             } else {
-                weirdWord += word[i].toLowerCase();
+                weirdWord += word[j].toLowerCase();
             }
         }
-        return weirdWord;
-    }).join(' ');
+
+        result.push(weirdWord);
+    }
+
+    return result.join(' ');
 }
