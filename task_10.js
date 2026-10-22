@@ -8,10 +8,14 @@ let miniWins = 0;
         for (let j = 0; j < str.length; j++) {
             if (str.charCodeAt(j) === num) {
                 miniWins++;
-                break; 
+                break;
             }
         }
     }
 
-    return miniWins >= win ? 'Winner!' : 'Loser!';
+    if (miniWins >= win) {
+        return 'Winner!';
+    } else {
+        return 'Loser!';
+    }
 }
